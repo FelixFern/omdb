@@ -34,7 +34,7 @@ const MovieDetailPageContent = () => {
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[350px_1fr] xl:gap-16">
           <div className="flex flex-col gap-6">
-            <div className="group relative aspect-2/3 overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10 transition-transform duration-300 hover:scale-[1.02]">
+            <div className="group relative aspect-2/3 overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
               {movieDetails.Poster !== "N/A" ? (
                 <img
                   src={movieDetails.Poster}

@@ -10,7 +10,7 @@ export const useMovieDetailPageImpl = () => {
 
   const { movieId } = Route.useParams()
   const dispatch = useAppDispatch()
-  const { movieDetails, isLoadingDetail, detailError } = useAppSelector((state) => state.movies)
+  const { movieDetails, isLoadingDetail } = useAppSelector((state) => state.movies)
 
   useEffect(() => {
     dispatch(clearDetail())

@@ -40,6 +40,7 @@ const AutoCompleteInput = ({
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
         onKeyDown={handleOnKeyDown}
+        data-testid="input-autocomplete"
       />
       {isShowOptions && (
         <div className="absolute top-full left-0 right-0 z-10 shadow bg-white max-h-72 overflow-y-scroll">

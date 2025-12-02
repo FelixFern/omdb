@@ -33,6 +33,7 @@ export const searchMovies = createAsyncThunk(
   async ({ query, page = 1 }: { query: string; page?: number }, { rejectWithValue }) => {
     try {
       const response = await omdbService.search({ s: query.trim(), page });
+      if (response.data.Response === 'False') return rejectWithValue(response.data.Error);
       return response.data as TSearchMoviesResponse;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.Error || 'Failed to search movies');
@@ -45,6 +46,7 @@ export const loadMoreMovies = createAsyncThunk(
   async ({ query, page }: { query: string; page: number }, { rejectWithValue }) => {
     try {
       const response = await omdbService.search({ s: query.trimEnd(), page });
+      if (response.data.Response === 'False') return rejectWithValue(response.data.Error);
       return response.data as TSearchMoviesResponse;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.Error || 'Failed to load more movies');
@@ -60,6 +62,7 @@ export const getMovieDetail = createAsyncThunk(
         ...params,
         plot: 'full'
       });
+      if (response.data.Response === 'False') return rejectWithValue(response.data.Error);
       return response.data as TSearchByTitleResponse;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.Error || 'Failed to load movie details');
