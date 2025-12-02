@@ -1,12 +1,14 @@
-import type { TMovie } from "../common";
+import type { TMovie, TOMBDBaseResponse } from "../common";
 
 export type TSearchMovieParams = {
   s: string;
-  page: number
+  y?: string;
+  r?: "json" | 'xml';
+  page?: number
+  type?: string
 }
 
-export type TSearchMoviesResponse = {
+export type TSearchMoviesResponse = TOMBDBaseResponse<{
   Search: TMovie[];
   totalResults: string;
-  Response: "True";
-}
+}>
