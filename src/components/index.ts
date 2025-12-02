@@ -1,2 +1,0 @@
-export { HomePageContent } from './pages';
-

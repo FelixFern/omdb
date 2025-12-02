@@ -1,4 +1,4 @@
-import { HomePageContent } from "@/components";
+import { HomePageContent } from "@/components/pages";
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 
