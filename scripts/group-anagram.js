@@ -20,3 +20,5 @@ const groupAnagram = (arr) => {
 
   return Object.values(grouped);
 };
+
+console.log(groupAnagram(texts));
