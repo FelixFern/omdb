@@ -115,6 +115,7 @@ pnpm serve
 | `serve`              | Previews the production build locally      |
 | `test`               | Runs all unit tests                        |
 | `test -- --coverage` | Runs tests with coverage report            |
+| `question-1`         | Runs script to group anagrams (Q1)         |
 
 ## Tech Stack
 
