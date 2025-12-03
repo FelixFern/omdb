@@ -8,8 +8,8 @@ const HomePageContent = () => {
   return (
     <div className="flex flex-col gap-4 px-4 relative">
       <div className="mx-auto relative w-full items-center flex flex-col gap-4">
-        <div className="sticky top-0 py-8 z-10 bg-background space-y-2 w-full">
-          <div className="container mx-auto">
+        <div className="sticky top-0 py-8 z-10 bg-background w-full">
+          <div className="container mx-auto space-y-2">
             <div className="text-left flex flex-col gap-1">
               <h1 className="text-3xl font-bold text-primary">OMDB Movie</h1>
               <p className="text-xl text-secondary-foreground">
