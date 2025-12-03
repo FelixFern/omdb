@@ -18,8 +18,6 @@ const MovieList = () => {
     isLoadingMore,
   } = useMovieListImpl();
 
-  console.log(searchResults);
-
   if (!search.length) return <MovieNotSearching />;
   if (isSearching) return <MovieListLoading />;
   if (searchError) return <MovieListError searchError={searchError} />;

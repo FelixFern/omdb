@@ -4,10 +4,10 @@ import {
   setupMockMovieDetail,
 } from "@/mock";
 import { store } from "@/store";
-import { render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import MovieDetailPageContent from "../MovieDetailPage/index";
+import MovieDetailPageContent from "../MovieDetailPage";
 
 const mockNavigate = vi.fn();
 const mockHistoryBack = vi.fn();
@@ -65,5 +65,23 @@ describe("MovieDetailPage", () => {
     await waitFor(() => {
       expect(screen.getByText("Movie not found")).toBeDefined();
     });
+  });
+
+  it("navigates back when clicking the back button", async () => {
+    setupMockMovieDetail();
+    render(
+      <Provider store={store}>
+        <MovieDetailPageContent />
+      </Provider>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText(mockMovieDetail.Title)).toBeDefined();
+    });
+
+    const backButton = screen.getByText("Back to Search");
+    fireEvent.click(backButton);
+
+    expect(mockHistoryBack).toHaveBeenCalledTimes(1);
   });
 });

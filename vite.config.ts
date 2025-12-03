@@ -25,5 +25,20 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: [
+        'src/main.tsx',
+        'src/reportWebVitals.ts',
+        'src/routeTree.gen.ts',
+        'src/routes',
+        '**/__tests__/**',
+        '**/*.test.{ts,tsx}',
+        '**/*.spec.{ts,tsx}',
+        '**/types/**',
+      ],
+    },
   },
 })
