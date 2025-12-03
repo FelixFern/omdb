@@ -174,7 +174,7 @@ The project maintains comprehensive test coverage across critical components:
 
 **Tested Components:**
 
-- ✅ `AutoCompleteInput` (8 tests) - Search input with keyboard navigation
+- ✅ `AutoCompleteInput` (10 tests) - Search input with keyboard navigation
 - ✅ `HomePage` (5 tests) - Search functionality and error handling
 - ✅ `MovieDetailPage` (3 tests) - Movie details display and navigation
 - ✅ `useDebounce` hook (5 tests) - Debounce functionality

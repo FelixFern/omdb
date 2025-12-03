@@ -50,6 +50,11 @@ export const useAutoCompleteInputImpl = ({
       }
       inputRefs.current?.blur();
     }
+    if (e.key === "Escape") {
+      e.preventDefault();
+      setIsShowOptions(false);
+      inputRefs.current?.blur();
+    }
   };
 
   const handleOnClickValue = (value: string) => {

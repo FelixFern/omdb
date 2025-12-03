@@ -155,6 +155,20 @@ describe("AutoCompleteInput", () => {
     expect(mockOnChange).toHaveBeenCalledWith("superman");
   });
 
+  it("esc key closes options", () => {
+    render(
+      <AutoCompleteInput
+        value=""
+        onChange={mockOnChange}
+        options={mockOptions}
+      />
+    );
+    const input = screen.getByTestId("input-autocomplete");
+    fireEvent.focus(input);
+    fireEvent.keyDown(input, { key: "Escape" });
+    expect(mockOnChange).not.toHaveBeenCalled();
+  });
+
   it("handles empty options gracefully", () => {
     render(<AutoCompleteInput value="" onChange={mockOnChange} options={[]} />);
     const input = screen.getByTestId("input-autocomplete");
