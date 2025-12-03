@@ -117,6 +117,8 @@ pnpm serve
 | `test -- --coverage` | Runs tests with coverage report            |
 | `question-1`         | Runs script to group anagrams (Q1)         |
 
+> **Note**: The solution for Question 1 (Logic Test - Group Anagrams) can be found in the `scripts/` folder. Run it using `npm run question-1` or `pnpm question-1`.
+
 ## Tech Stack
 
 ### Core Technologies
