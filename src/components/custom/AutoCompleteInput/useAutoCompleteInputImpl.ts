@@ -43,7 +43,7 @@ export const useAutoCompleteInputImpl = ({
       e.preventDefault();
       setSelectedIndex((prev) => Math.max(prev - 1, 0));
     }
-    if (e.key === "Enter") {
+    if (e.key === "Enter" || e.key === "Tab") {
       e.preventDefault();
       if (options?.[selectedIndex]?.value) {
         onChange(options?.[selectedIndex]?.value);

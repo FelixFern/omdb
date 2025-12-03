@@ -136,6 +136,25 @@ describe("AutoCompleteInput", () => {
     expect(mockOnChange).toHaveBeenCalledWith("superman");
   });
 
+  it("selects option with Tab key", () => {
+    render(
+      <AutoCompleteInput
+        value=""
+        onChange={mockOnChange}
+        options={mockOptions}
+      />
+    );
+    const input = screen.getByTestId("input-autocomplete");
+    fireEvent.focus(input);
+
+    fireEvent.keyDown(input, { key: "Tab" });
+    expect(mockOnChange).toHaveBeenCalledWith("batman");
+
+    fireEvent.keyDown(input, { key: "ArrowDown" });
+    fireEvent.keyDown(input, { key: "Tab" });
+    expect(mockOnChange).toHaveBeenCalledWith("superman");
+  });
+
   it("handles empty options gracefully", () => {
     render(<AutoCompleteInput value="" onChange={mockOnChange} options={[]} />);
     const input = screen.getByTestId("input-autocomplete");
