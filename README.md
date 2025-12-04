@@ -169,7 +169,7 @@ The project maintains comprehensive test coverage across critical components:
 
 **Test Statistics:**
 
-- **Total Tests**: 21 tests across 4 test files
+- **Total Tests**: 23 tests across 4 test files
 - **Overall Coverage**: ~90% statement coverage
 
 **Tested Components:**
